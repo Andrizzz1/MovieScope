@@ -1,76 +1,102 @@
-# React + TypeScript + Vite
+# 🎬 MovieScope
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A movie discovery web app where you can search any movie and instantly view its plot, cast, ratings, runtime, and more.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 📽️ Demo
 
-## React Compiler
+https://github.com/user-attachments/assets/a50565d9-b84c-4f30-8ae4-57aa952be3a2
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 🔍 Search any movie by title
+- 🎭 View full cast, director, and writer details
+- ⭐ See ratings from IMDb, Rotten Tomatoes, and Metacritic
+- 📖 Read the movie plot and genre
+- 🌍 Language, country, awards, and box office info
+- 🎨 Fluid splash cursor animation background
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Tech Stack
 
+| Frontend | Backend |
+|----------|---------|
+| ReactJS | Node.js |
+| TypeScript | Express |
+| Tailwind CSS | Axios |
+| ReactBits | dotenv |
+
+**API:** [OMDB API](https://www.omdbapi.com/)
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone <your-repo-link>
+cd MovieScope
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm install
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 3. Get a free API key
+
+Go to [https://www.omdbapi.com/](https://www.omdbapi.com/) and register for a free API key.
+
+### 4. Set up your `.env` file
+
+Create a `.env` file in the **root of your project directory** and add:
+
+```env
+OMBN_API=YOUR_API_KEY_HERE
+```
+
+> ⚠️ Never share or commit your `.env` file. It is already included in `.gitignore`.
+
+### 5. Start the backend server
+
+```bash
+cd server
+npx ts-node index.ts
+```
+
+### 6. Start the frontend
+
+```bash
+npm run dev
+```
+
+The app will be running at `http://localhost:5173`
+
+---
+
+## 📁 Project Structure
 
 ```
-# MovieScope
+MovieScope/
+├── src/
+│   ├── components/
+│   │   └── SplashCursor.tsx
+│   └── App.tsx
+├── index.ts
+├── .env
+├── .gitignore
+└── README.md
+```
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
