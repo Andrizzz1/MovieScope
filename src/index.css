@@ -1,0 +1,21 @@
+@font-face {
+    font-family:"Bungee";
+    src: url(../src/assets/fonts/Bungee-Regular.ttf);
+}
+
+@font-face {
+    font-family:"Lobster Two" ;
+    src: url(../src/assets/fonts/LobsterTwo-BoldItalic.ttf);
+}
+
+@import "tailwindcss";
+
+@theme{
+    --font-Bungee:"Bungee","sans-serif";
+    --font-Lobster:"Lobster Two","cursive"
+}
+
+
+body{
+    background-color: #191919;
+}
